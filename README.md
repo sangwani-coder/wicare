@@ -60,6 +60,6 @@ If you get a resourse not found error, make sure that you got the base url corre
 
 **Users**
 
-* List`
-
-    http://localhost:8000/wicare/api/subscribers
+    url: http://localhost:8000/wicare/api/users
+    
+* List
