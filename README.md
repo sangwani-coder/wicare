@@ -51,16 +51,15 @@ If you get a resourse not found error, make sure that you got the base url corre
 
 **Subscribers**
 
+    url: http://localhost:8000/wicare/api/subscribers
+
 * Create
 * List
 * Update
 * Delete
 
-    url: http://localhost:8000/wicare/api/subscribers
-
-
 **Users**
 
-* List
+* List`
 
     http://localhost:8000/wicare/api/subscribers
