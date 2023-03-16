@@ -18,6 +18,8 @@ from django.urls import path, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('subscribers.urls')),
+    path('wicare/api/destitutes', include('destitutes.urls')),
+    path('wicare/api/donations/', include('donations.urls')),
+    path('wicare/api/subscribers/', include('subscribers.urls')),
     path('api-auth/', include('rest_framework.urls')),
 ]

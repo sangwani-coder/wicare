@@ -34,6 +34,8 @@ REST_FRAMEWORK = {
 # Application definition
 
 INSTALLED_APPS = [
+    'destitutes',
+    'donations',
     'rest_framework',
     'subscribers',
     'django.contrib.admin',

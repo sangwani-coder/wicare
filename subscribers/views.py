@@ -9,47 +9,24 @@ from subscribers.permissions import IsOwnerOrReadOnly
 from django.contrib.auth.models import User
 from rest_framework import permissions
 
-from rest_framework import renderers
+from rest_framework import viewsets
 
-@api_view(['GET'])
-def api_root(request, format=None):
-    return Response({
-        'users': reverse('user-list', request=request, format=format),
-        'subscribers': reverse('subscribers-list', request=request, format=format)
-    })
-
-class SubscribersHighlight(generics.GenericAPIView):
-    queryset = Subscribers.objects.all()
-    renderer_classes = [renderers.StaticHTMLRenderer]
-
-    def get(self, request, *args, **kwargs):
-        subscriber = self.get_object()
-        return Response(subscriber.highlighted)
-    
-class SubscriberList(generics.ListCreateAPIView):
+class SubscriberViewSet(viewsets.ModelViewSet):
     """
-    List all subscribers, or create a new subscriber.
+    This viewset automatically provides `list`, `create`,
+    `retrive`, `update` and `destroy` actions.
     """
-    permission_classes = [permissions.IsAuthenticatedOrReadOnly]
     queryset = Subscribers.objects.all()
     serializer_class = SubscriberSerializer
-
+    permission_classes = [permissions.IsAuthenticatedOrReadOnly,
+                          IsOwnerOrReadOnly]
+    
     def perform_create(self, serializer):
         serializer.save(owner=self.request.user)
 
-class SubscriberDetail(generics.RetrieveUpdateDestroyAPIView):
+class UserViewSet(viewsets.ReadOnlyModelViewSet):
     """
-    Retrieve, update, delete a subscriber.
+    This viewset automatically provides `list` and `retrive` actions.
     """
-    permission_classes = [permissions.IsAuthenticatedOrReadOnly,
-                          IsOwnerOrReadOnly]
-    queryset = Subscribers.objects.all()
-    serializer_class = SubscriberSerializer
-
-class UserList(generics.ListAPIView):
-    queryset = User.objects.all()
-    serializer_class = UserSerializer
-
-class UserDetail(generics.RetrieveAPIView):
     queryset = User.objects.all()
     serializer_class = UserSerializer

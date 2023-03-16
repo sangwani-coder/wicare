@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from subscribers.models import Subscribers, LOCATION_CHOICES
+from subscribers.models import Subscribers
 from django.contrib.auth.models import User
 
 class SubscriberSerializer(serializers.HyperlinkedModelSerializer):
@@ -8,14 +8,14 @@ class SubscriberSerializer(serializers.HyperlinkedModelSerializer):
     into json representation.
     """
     owner = serializers.ReadOnlyField(source='owner.username')
-    highlight = serializers.HyperlinkedIdentityField(view_name='subscribers-list', format='html')
-    # look_up_field = 'owner'
 
     class Meta:
         model = Subscribers
         look_up_field = 'owner'
-        fields = ['url', 'id', 'highlight', 'owner',
-                  'firstname','lastname', 'location','mobile','email']
+        fields = ['created', 'id', 'owner',
+                  'firstname','lastname', 
+                  'location','mobile','email', 'url'
+                  ]
 
 class UserSerializer(serializers.HyperlinkedModelSerializer):
     subscribers = serializers.HyperlinkedRelatedField(
