@@ -18,6 +18,7 @@ If you get a resourse not found error, make sure that you got the base url corre
 
 
 **Donations**
+The endpoint that adds and lists a donation.
 
     url: http://localhost:8000/wicare/api/donations
 
@@ -40,16 +41,29 @@ If you get a resourse not found error, make sure that you got the base url corre
         "url": "http://localhost:8000/wicare/api/donations/donations/1/"
     }
 
-**Destitutes**
+**Health**
+The endpoint that adds, lists, updates, and deletes a health related case.
 
-    url: http://localhost:8000/wicare/api/destitutes
+    url: http://localhost:8000/wicare/api/health
 
 * Create
 * Delete
 * List
+* Update
+
+**Education**
+The endpoint that adds, lists, updates, and deletes an education related case.
+
+    url: http://localhost:8000/wicare/api/education
+
+* Create
+* Delete
+* List
+* Update
 
 
 **Subscribers**
+The endpoint that adds, lists, updates, and deletes a subscriber.
 
     url: http://localhost:8000/wicare/api/subscribers
 
