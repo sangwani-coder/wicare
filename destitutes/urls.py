@@ -6,8 +6,8 @@ from subscribers.views import SubscriberViewSet, UserViewSet
 
 router = DefaultRouter()
 
-router.register(r'education', views.DestitutesEducationViewSet,basename='education')
-router.register(r'health', views.DestitutesHealthViewSet,basename='health')
+router.register(r'education', views.EducationViewSet,basename='education')
+router.register(r'health', views.HealthViewSet,basename='health')
 router.register(r'donations', DonationsViewSet,basename='donations')
 router.register(r'subscribers', SubscriberViewSet,basename="subscribers")
 router.register(r'users', UserViewSet,basename='user')

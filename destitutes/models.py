@@ -1,11 +1,11 @@
 from django.db import models
 
-class DestitutesEducation(models.Model):
+class Education(models.Model):
     """
-    Model that stores childs data.
+    Model that stores a students data.
     """
     created = models.DateTimeField(auto_now_add=True)
-    caregiver = models.ForeignKey('auth.User', related_name='caregiver', on_delete=models.CASCADE)
+    volunteer = models.CharField(max_length=150, blank=False)
     familyname = models.CharField(max_length=100, blank=False)
     shortstory = models.CharField(max_length=250)
     problemdescription = models.TextField(max_length=1000)
@@ -15,7 +15,7 @@ class DestitutesEducation(models.Model):
     class Meta:
         ordering = ['created']
 
-class DestitutesHealth(models.Model):
+class Health(models.Model):
     """
     Model that stores a patients data.
     """
