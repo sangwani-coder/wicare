@@ -1,6 +1,6 @@
 # wicare
 
-> A wicare frontend
+> A wicare Vue.js frontend
 
 ## Build Setup
 
