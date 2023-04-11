@@ -95,9 +95,9 @@ WSGI_APPLICATION = 'wicare.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'lipila',
-        'USER': 'lipila_dev',
-        'PASSWORD': 'lipila',
+        'NAME': 'wicaredb',
+        'USER': 'wicare_dev',
+        'PASSWORD': 'wicare-pass',
         'HOST': '127.0.0.1',
         'PORT': '5432'
     }
@@ -146,5 +146,5 @@ STATIC_URL = 'static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 CORS_ORIGIN_WHITELIST = (
-    'localhost:8080',
+    'http://localhost:8080',
 )
