@@ -27,26 +27,20 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
-REST_FRAMEWORK = {
-    'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
-    'PAGE_SIZE': 10,
-    'DEFAULT_PERMISSION_CLASSES': [],
-    'TEST_REQUEST_DEFAULT_FORMAT': 'json'
-}
 # Application definition
 
 INSTALLED_APPS = [
-    'corsheaders',
-    'destitutes',
-    'donations',
-    'rest_framework',
-    'subscribers',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+    'corsheaders',
+    'rest_framework',
+    'knox',
+    'accounts',
 ]
 
 MIDDLEWARE = [
@@ -85,23 +79,23 @@ WSGI_APPLICATION = 'wicare.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': BASE_DIR / 'db.sqlite3',
-#     }
-# }
-
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'wicaredb',
-        'USER': 'wicare_dev',
-        'PASSWORD': 'wicare-pass',
-        'HOST': '127.0.0.1',
-        'PORT': '5432'
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'wicaredb',
+#         'USER': 'wicare_dev',
+#         'PASSWORD': 'wicare-pass',
+#         'HOST': '127.0.0.1',
+#         'PORT': '5432'
+#     }
+# }
 
 
 # Password validation
@@ -148,3 +142,13 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 CORS_ORIGIN_WHITELIST = (
     'http://localhost:8080',
 )
+
+REST_FRAMEWORK = {
+    'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
+    'PAGE_SIZE': 10,
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        # 'rest_framework.authentication.BasicAuthentication',
+        # 'rest_framework.authentication.SessionAuthentication',
+        'knox.auth.TokenAuthentication',
+    ]
+}
