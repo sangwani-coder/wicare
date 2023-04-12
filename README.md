@@ -1,11 +1,18 @@
 # wicare
-Web application where subscribers register destitute people on the platform and raise donations on their behalf.
+WiCare is a web and mobile application that aims to reduce poverty and improve the quality of life of families in poor communities by connecting them with individuals and organizations willing to provide donations.
+
+WiCare provides a platform for subscribers (nurses and teachers) in poor communities to create profiles of families in need and request donations on their behalf.
+
+Donors can browse profiles of families in need, read their stories, and make donations directly through the platform. WiCare's mission is to provide a simple, efficient, and transparent way for subscribers and donors to help families in need and create a positive impact on their lives.
+
+WiCare's ultimate goal is to reduce poverty and improve the well-being of communities in Zambia and beyond.
 
 ## Technologies
 
 * *Django Rest* Backend(server side)
 * *Vues.js* Frontend
 * *postgres* Database
+* *knox* Authentication
 
 
 ## API Endpoints
@@ -14,66 +21,9 @@ Web application where subscribers register destitute people on the platform and 
 
 If you get a resourse not found error, make sure that you got the base url correct.
 
-    http://localhost:8000/wicare/api/
+    `/wicare/api/`
 
+**User Authentication Endpoints**
 
-**Donations**
-The endpoint that adds and lists a donation.
+* [Accounts](./accounts/README.md)
 
-    url: http://localhost:8000/wicare/api/donations
-
-* Create
-* List
-
-### example query
-
-    GET /wicare/api/donations/donations/1
-
-### example response
-
-    {
-        "created": "2023-03-15T23:25:08.755951Z",
-        "sponsor": "Peter Zyambo",
-        "amount": 50,
-        "donate_to": "Education",
-        "mobile": "0977604012",
-        "email": "zyambo@icloud.com",
-        "url": "http://localhost:8000/wicare/api/donations/donations/1/"
-    }
-
-**Health**
-The endpoint that adds, lists, updates, and deletes a health related case.
-
-    url: http://localhost:8000/wicare/api/health
-
-* Create
-* Delete
-* List
-* Update
-
-**Education**
-The endpoint that adds, lists, updates, and deletes an education related case.
-
-    url: http://localhost:8000/wicare/api/education
-
-* Create
-* Delete
-* List
-* Update
-
-
-**Subscribers**
-The endpoint that adds, lists, updates, and deletes a subscriber.
-
-    url: http://localhost:8000/wicare/api/subscribers
-
-* Create
-* List
-* Update
-* Delete
-
-**Users**
-
-    url: http://localhost:8000/wicare/api/users
-    
-* List

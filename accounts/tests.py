@@ -9,6 +9,37 @@ from knox.models import AuthToken
 from django.contrib.auth.models import User
 
 
+class AuthenticationTest(APITestCase):
+    def setUp(self):
+        self.register_url = reverse('register')
+        self.login_url = reverse('login')
+        self.logout_url = reverse('logout')
+        self.logout_all_url = reverse('logoutall')
+
+    def test_register(self):
+        """
+        Test that the register reverse URL is correct.
+        """
+        self.assertEqual(self.register_url, "/wicare/api/auth/register/")
+
+    def test_login(self):
+        """
+        Test that the login reverse URL is correct.
+        """
+        self.assertEqual(self.login_url, "/wicare/api/auth/login/")
+
+    def test_logout(self):
+        """
+        Test that the logout reverse URL is correct.
+        """
+        self.assertEqual(self.logout_url, "/wicare/api/auth/logout/")
+
+    def test_logout_all(self):
+        """
+        Test that the logoutall reverse URL is correct.
+        """
+        self.assertEqual(self.logout_all_url, "/wicare/api/auth/logoutall/")
+
 class RegisterSerializerTestCase(TestCase):
     def setUp(self):
         self.user_data = {
@@ -58,7 +89,6 @@ class RegisterAPITest(APITestCase):
         
         # Verify that the user instance was created correctly
         user_id = AuthToken.objects.get(user_id=1).user_id
-        print(user_id)
         user = User.objects.get(id=user_id)
         self.assertEqual(user.username, self.user_data['username'])
         self.assertEqual(user.email, self.user_data['email'])
@@ -91,16 +121,23 @@ class LoginAPITest(APITestCase):
 #     client = APIClient()
 
 #     def setUp(self):
-#         self.user = User.objects.create_user(
-#             username="testuser", password="testpass123"
-#         )
-#         self.token = AuthToken.objects.create(user=self.user)
-#         print(str(self.token[0]))
-#         self.headers = {"Authorization": f"Token {str(self.token[0])}"}
+#         self.client = Client()
+#         self.login_url = reverse('login')
+#         self.user_data = {
+#             'username': 'testuser',
+#             'email': 'test@example.com',
+#             'password': 'password123'
+#         }
+#         self.user = User.objects.create_user(**self.user_data)
+
+#         response = self.client.post(self.login_url, self.user_data, format='json')
+#         token = response.data['token']
+#         self.headers = {"Authorization": f"Token {token}"}
 
 #     def test_logout_valid_user(self):
-#         url = "/api/logout/"
-#         response = self.client.post(url, **self.headers)
+#         url = reverse('logout')
+#         response = self.client.post(url, self.headers)
+#         print(response)
 #         self.assertEqual(response.status_code, status.HTTP_204_NO_CONTENT)
 #         # Check that the token is invalidated and no longer exists
-#         self.assertFalse(AuthToken.objects.filter(key=str(self.token[0])).exists())
+#         # self.assertFalse(AuthToken.objects.filter(key=str(self.token[0])).exists())
