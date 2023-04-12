@@ -23,7 +23,15 @@ If you get a resourse not found error, make sure that you got the base url corre
 
     `/wicare/api/`
 
-**User Authentication Endpoints**
+## WiCare Apps
 
-* [Accounts](./accounts/README.md)
+|Application name | Description |
+|------------------|------------|
+| [*] [Accounts](./accounts/)| User Authentication|
+| [*] [API](./api/)| Business logic |
 
+## Team
+
+- Peter Zyambo (Founder)
+- Petrocelly Kafula (Co-Founder with experience in project management and fundraising)
+- Sepiso Mukelabai (Co-Founder, Student Nurse, Community worker)

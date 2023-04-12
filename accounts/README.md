@@ -1,12 +1,22 @@
-# accounts app
+# Accounts app
 The accounts app defines endpoints for user authentication.
 
-### Examples
+## Base URI
 
-**REGISTER**
-endpoint that registers a user.
+If you get a resourse not found error, make sure that you got the base url correct.
 
-* POST: /wicare/api/auth/register/
+    `/wicare/api/`
+
+### Example Requests
+
+### Registration
+
+`POST /wicare/api/auth/register/`
+
+This endpoint allows users to register for a WiCare account. The request should include the user's `username`, `email`, and `password`. If successful, the response will include the registered user's information and an authentication token.
+
+**Example Request**
+
 
 **Body (json)**
 
@@ -31,10 +41,13 @@ endpoint that registers a user.
     * 200 OK
     * 
 
-**LOGIN**
-endpoint that logins in a user.
+### Login
 
-* POST: /wicare/api/auth/login/
+`POST /wicare/api/auth/login/`
+
+This endpoint allows users to login to their WiCare account. The request should include the user's `email` and `password`. If successful, the response will include the authenticated user's information and an authentication token.
+
+**Example Request**
 
 **Body (json)**
 
@@ -50,17 +63,17 @@ endpoint that logins in a user.
     "token": "7671fcda7591a3ca307438374cc86f56d8c86ab5d5b7204b6f50123b9c1e98e8"
     }
 
-`token`: Used in request headers to access protected views.
-
 **Response Codes**
     
     * 200 OK
 
-**LOGOUT**
+### Logout
 
-endpoint that logs out an authenticated user.
+`POST /wicare/api/auth/logout/`
 
-* POST: /wicare/api/auth/logout/
+This endpoint allows users to logout of their WiCare account. The request should include the user's authentication token. 
+
+* **Example request**
 
 **Request Headers**
 
@@ -70,3 +83,8 @@ endpoint that logs out an authenticated user.
     
     * 204 No Conent(user has been logged out successfully)
 
+### Logout All
+
+`POST wicare//api/auth/logoutall/`
+
+This endpoint allows users to logout of all their active WiCare sessions. The request should include the user's authentication token.
