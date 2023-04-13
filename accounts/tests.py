@@ -116,28 +116,3 @@ class LoginAPITest(APITestCase):
         token = AuthToken.objects.get(user_id=1)
         self.assertEqual(token.user, self.user)
 
-
-# class LogoutAPITestCase(APITestCase):
-#     client = APIClient()
-
-#     def setUp(self):
-#         self.client = Client()
-#         self.login_url = reverse('login')
-#         self.user_data = {
-#             'username': 'testuser',
-#             'email': 'test@example.com',
-#             'password': 'password123'
-#         }
-#         self.user = User.objects.create_user(**self.user_data)
-
-#         response = self.client.post(self.login_url, self.user_data, format='json')
-#         token = response.data['token']
-#         self.headers = {"Authorization": f"Token {token}"}
-
-#     def test_logout_valid_user(self):
-#         url = reverse('logout')
-#         response = self.client.post(url, self.headers)
-#         print(response)
-#         self.assertEqual(response.status_code, status.HTTP_204_NO_CONTENT)
-#         # Check that the token is invalidated and no longer exists
-#         # self.assertFalse(AuthToken.objects.filter(key=str(self.token[0])).exists())

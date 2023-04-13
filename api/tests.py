@@ -1,7 +1,7 @@
 from django.test import TestCase
 from django.urls import reverse
 from rest_framework import status
-from .models import Donee
+from .models import Donee, Donation
 from .serializers import DoneeSerializer
 from rest_framework.test import APITestCase, APIClient
 
@@ -52,7 +52,7 @@ class DoneeSerializerTestCase(TestCase):
         self.assertFalse(serializer.is_valid())
 
 
-class DoneeListTestCase(TestCase):
+class DoneeListCreateTestCase(TestCase):
     def setUp(self):
         self.client = APIClient()
         self.user = get_user_model().objects.create_user(
@@ -102,7 +102,7 @@ class DoneeDetailTestCase(TestCase):
         self.assertEqual(response.data, serializer.data)
 
 
-class DoneeRetrieveUpdateDestroyAPIView(APITestCase):
+class DoneeRetrieveUpdateDestroyTestCase(APITestCase):
     client = APIClient()
     
     def setUp(self):
@@ -114,7 +114,7 @@ class DoneeRetrieveUpdateDestroyAPIView(APITestCase):
         self.client.force_authenticate(user=self.user)
         Donee.objects.create(
             user=self.user, full_name='Test Donee',
-            location='Test Location', bio='Test Bio'
+            location='Test Location', need="test need", bio='Test Bio'
             )
 
     def test_get_donee_detail(self):
@@ -139,3 +139,121 @@ class DoneeRetrieveUpdateDestroyAPIView(APITestCase):
         self.assertEqual(donee.full_name, data['full_name'])
         self.assertEqual(donee.location, data['location'])
         self.assertEqual(donee.bio, data['bio'])
+
+    def test_delete_donee_detail(self):
+        donee = Donee.objects.first()
+        response = self.client.delete(
+            reverse('donee_detail', kwargs={'pk': donee.id}))
+        self.assertEqual(response.status_code, status.HTTP_204_NO_CONTENT)
+
+
+class DoneeCreateTestCase(APITestCase):
+    """
+    Test that a Donee can be created with a POST request
+    to the donne_list endpoint.
+    """
+    client = APIClient()
+    
+    def setUp(self):
+        self.user = User.objects.create_user(
+            username='testuser', email='testuser@test.com',
+            password='testpass'
+        )
+        self.client.force_authenticate(user=self.user)
+        
+        self.donee_url = reverse('donee_list')
+        
+        self.user_data = {
+            'full_name': 'New Name',
+            'location': 'New Location',
+            'bio': 'New Bio',
+            'need':'New need'
+        }
+    
+    def test_create_donee(self):
+        """
+        Test that a new donee can be created.
+        """
+        response = self.client.post(
+            self.donee_url, self.user_data, format='json')
+        self.assertEqual(response.status_code, status.HTTP_201_CREATED)
+        self.assertIn('full_name', response.data)
+        
+        # Verify that the user instance was created correctly
+        donee = Donee.objects.get(id=1)
+        self.assertEqual(donee.full_name, self.user_data['full_name'])
+        self.assertEqual(donee.need, self.user_data['need'])
+
+
+class DonationTestCase(APITestCase):
+    """
+    Test that donations can be viewed,
+    and a new donation can be created.
+    """
+    client = APIClient()
+
+    def setUp(self):
+        self.user = get_user_model().objects.create_user(
+            username='testuser',
+            email='testuser@example.com',
+            password='testpass'
+        )
+        self.client.force_authenticate(user=self.user)
+        self.donee = Donee.objects.create(
+            user=self.user, full_name='Test Donee',
+            location='Test Location', need="test need", bio='Test Bio'
+            )
+
+        self.donation_url = reverse('donation')
+
+    def test_get_donation(self):
+        Donation.objects.create(
+            donee=self.donee,
+            donor_full_names='donor names',
+            location='Kitwe',
+            amount=50,
+            comment='Glad to help',
+            account_number= '0987537829290'
+        )
+        response = self.client.get(self.donation_url)
+        self.assertEqual(response.status_code, status.HTTP_200_OK)
+        # verify that a donation was created to the
+        # right donee
+        donation = Donation.objects.first()
+        self.assertEqual(donation.donee.full_name, 'Test Donee')
+        self.assertEqual(donation.comment, 'Glad to help')
+        # verify that the donation was added to the right user
+        self.assertEqual(donation.donee.user.username, 'testuser')
+
+    def test_create_donation(self):
+        donee = Donee.objects.first()
+        donor_data = {
+            'donee': donee.id,
+            'donor_full_names':'donor names',
+            'location':'Kitwe',
+            'amount':50,
+            'comment':'Glad to help',
+            'account_number':'0987537829290'
+        }
+        response = self.client.post(self.donation_url, donor_data, format='json')
+        self.assertEqual(response.status_code, status.HTTP_201_CREATED)
+        # verify that a donation was created to the
+        # right donee
+        donation = Donation.objects.first()
+        self.assertEqual(donation.donee.full_name, 'Test Donee')
+        self.assertEqual(donation.comment, 'Glad to help')
+        # verify that the donation was added to the right user
+        self.assertEqual(donation.donee.user.username, 'testuser')
+
+    def test_donation_invalid_methods(self):
+        donee = Donee.objects.first()
+        donor_data = {
+            'donee': donee.id,
+            'donor_full_names':'donor names',
+            'location':'Kitwe',
+            'amount':50,
+            'comment':'Glad to help',
+            'account_number':'0987537829290'
+        }
+        response = self.client.put(self.donation_url, donor_data, format='json')
+        self.assertEqual(response.status_code, status.HTTP_405_METHOD_NOT_ALLOWED)

@@ -1,9 +1,9 @@
 # wicare
-WiCare is a web and mobile application that aims to reduce poverty and improve the quality of life of families in poor communities by connecting them with individuals and organizations willing to provide donations.
+WiCare is a web and mobile application that aims to reduce poverty and improve the quality of life of families in poor communities by connecting them with individuals and organizations willing to provide Donation.
 
-WiCare provides a platform for subscribers (nurses and teachers) in poor communities to create profiles of families in need and request donations on their behalf.
+WiCare provides a platform for subscribers (nurses and teachers) in poor communities to create profiles of families in need and request Donation on their behalf.
 
-Donors can browse profiles of families in need, read their stories, and make donations directly through the platform. WiCare's mission is to provide a simple, efficient, and transparent way for subscribers and donors to help families in need and create a positive impact on their lives.
+Donors can browse profiles of families in need, read their stories, and make Donation directly through the platform. WiCare's mission is to provide a simple, efficient, and transparent way for subscribers and donors to help families in need and create a positive impact on their lives.
 
 WiCare's ultimate goal is to reduce poverty and improve the well-being of communities in Zambia and beyond.
 
