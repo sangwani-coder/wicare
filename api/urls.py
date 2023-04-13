@@ -6,11 +6,12 @@ from .views import (
 from . import views
 
 urlpatterns = [
+    path('', views.api_root),
     path('donees/', DoneeListCreate.as_view(), name="donee_list"),
     path('donees/<int:pk>/', DoneeDetail.as_view(), name="donee_detail"),
     path('donees/profile/', UserProfileAPIView.as_view(), name='profile'),
 
-    path('users/', views.UserList.as_view()),
+    path('users/', views.UserList.as_view(), name='user-list'),
     path('users/<int:pk>/', views.UserDetail.as_view()),
     
     path('donation/', DonationAPIView.as_view(), name="donation" ),
