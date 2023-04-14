@@ -8,6 +8,7 @@ from rest_framework.test import APITestCase, APIClient
 from django.contrib.auth.models import User
 from django.contrib.auth import get_user_model
 
+from .choices import ModelChoices
 
 class DoneeModelTestCase(TestCase):
     def setUp(self):
@@ -15,17 +16,18 @@ class DoneeModelTestCase(TestCase):
             username='testuser', email='testuser@test.com',
             password='testpass'
         )
+        self.location = ModelChoices.ZAMBIAN_PROVINCE_CHOICES[1]
         self.donee = Donee.objects.create(
             user=self.user, 
             full_name='Test Donee', 
-            location='Test Location', 
+            location=self.location,
             need='Test need', 
             bio='Test bio'
         )
 
     def test_donee_model(self):
         self.assertEqual(
-            str(self.donee), "Test Donee, Test Location, Test need")
+            str(self.donee), "Test Donee, Central Province, Test need")
 
 
 class DoneeSerializerTestCase(TestCase):
@@ -37,9 +39,10 @@ class DoneeSerializerTestCase(TestCase):
         self.donee_data = {
             'user': self.user,
             'full_name': 'Lusaka Family',
-            'location': 'Test location',
+            'location': '',
             'need': 'Tuition fees',
-            'bio': 'I need help paying my tuition fees'
+            'bio': 'I need help paying my tuition fees',
+            'image':''
         }
         self.serializer = DoneeSerializer(data=self.donee_data)
 
@@ -91,7 +94,7 @@ class DoneeDetailTestCase(TestCase):
         self.client.force_authenticate(user=self.user)
         self.donee = Donee.objects.create(
             full_name='Donee 1', need='Need 1', user=self.user,
-            bio='', location=''
+            bio='', location='', image='',
             )
 
     def test_retrieve_donee(self):
@@ -114,7 +117,7 @@ class DoneeRetrieveUpdateDestroyTestCase(APITestCase):
         self.client.force_authenticate(user=self.user)
         Donee.objects.create(
             user=self.user, full_name='Test Donee',
-            location='Test Location', need="test need", bio='Test Bio'
+            location='', need="test need", bio='Test Bio', image='',
             )
 
     def test_get_donee_detail(self):
@@ -128,16 +131,16 @@ class DoneeRetrieveUpdateDestroyTestCase(APITestCase):
         donee = Donee.objects.first()
         data = {
             'full_name': 'New Name',
-            'location': 'New Location',
+            'location': '',
             'bio': 'New Bio',
-            'need':'New need'
+            'need':'New need',
+            'image':''
             }
         response = self.client.put(
             reverse('donee_detail', kwargs={'pk': donee.id}), data)
         self.assertEqual(response.status_code, status.HTTP_200_OK)
         donee.refresh_from_db()
         self.assertEqual(donee.full_name, data['full_name'])
-        self.assertEqual(donee.location, data['location'])
         self.assertEqual(donee.bio, data['bio'])
 
     def test_delete_donee_detail(self):
@@ -165,9 +168,10 @@ class DoneeCreateTestCase(APITestCase):
         
         self.user_data = {
             'full_name': 'New Name',
-            'location': 'New Location',
+            'location': '',
             'bio': 'New Bio',
-            'need':'New need'
+            'need':'New need',
+            'image':''
         }
     
     def test_create_donee(self):

@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'knox',
     'accounts',
     'api',
+    'phonenumber_field',
 ]
 
 MIDDLEWARE = [
