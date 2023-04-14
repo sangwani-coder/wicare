@@ -22,17 +22,17 @@ WiCare's ultimate goal is to reduce poverty and improve the well-being of commun
 If you get a resourse not found error, make sure that you got the base url correct.
 It returns links to all the endpoints.
 
-    `/wicare/api/`
+    `/api/`
 
 ### Base URL response
 
-    $ curl http:localhost:8000/wicare/api/
+    $ curl http:localhost:8000/api/
 
     {
-        "users": "http://localhost:8000/wicare/api/users/",
-        "donees": "http://localhost:8000/wicare/api/donees/",
-        "donations": "http://localhost:8000/wicare/api/donation/",
-        "subscriber-profiles": "http://localhost:8000/wicare/api/donees/profile/"
+        "users": "http://localhost:8000/api/users/",
+        "donees": "http://localhost:8000/api/donees/",
+        "donations": "http://localhost:8000/api/donation/",
+        "subscriber-profiles": "http://localhost:8000/api/donees/profile/"
     }
 
 ## WiCare Apps
