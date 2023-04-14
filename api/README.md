@@ -9,7 +9,7 @@ The following endpoints are available in the WiCare API:
 
 If you get a resourse not found error, make sure that you got the base url correct.
 
-    `/wicare/api/`
+    `/api/`
 
 ### Subscribers
 Allows users to view and update their WiCare account information

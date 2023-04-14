@@ -31,8 +31,11 @@ It returns links to all the endpoints.
     {
         "users": "http://localhost:8000/api/users/",
         "donees": "http://localhost:8000/api/donees/",
-        "donations": "http://localhost:8000/api/donation/",
-        "subscriber-profiles": "http://localhost:8000/api/donees/profile/"
+        "donations": "http://localhost:8000/api/donations/",
+        "register-user": "http://localhost:8000/api/auth/register/",
+        "login-user": "http://localhost:8000/api/auth/login/",
+        "logout-user": "http://localhost:8000/api/auth/logout/",
+        "logoutall-user": "http://localhost:8000/api/auth/logoutall/"
     }
 
 ## WiCare Apps

@@ -23,11 +23,17 @@ from rest_framework.viewsets import GenericViewSet
 
 @api_view(['GET'])
 def api_root(request, format=None):
+    """
+    Base URL APIView. returns url endpoints for the WiCare API.
+    """
     return Response({
         'users': reverse('user-list', request=request, format=format),
         'donees': reverse('donee_list', request=request, format=format),
         'donations': reverse('donation', request=request, format=format),
-        # 'subscriber-profiles': reverse('profile', request=request, format=format)
+        'register-user': reverse('register', request=request, format=format),
+        'login-user': reverse('login', request=request, format=format),
+        'logout-user': reverse('logout', request=request, format=format),
+        'logoutall-user': reverse('logoutall', request=request, format=format),
     })
 
 

@@ -5,13 +5,13 @@ The accounts app defines endpoints for user authentication.
 
 If you get a resourse not found error, make sure that you got the base url correct.
 
-    `/wicare/api/`
+    `/api/`
 
 ### Example Requests
 
 ### Registration
 
-`POST /wicare/api/auth/register/`
+`POST /api/auth/register/`
 
 This endpoint allows users to register for a WiCare account. The request should include the user's `username`, `email`, and `password`. If successful, the response will include the registered user's information and an authentication token.
 
@@ -43,7 +43,7 @@ This endpoint allows users to register for a WiCare account. The request should 
 
 ### Login
 
-`POST /wicare/api/auth/login/`
+`POST /api/auth/login/`
 
 This endpoint allows users to login to their WiCare account. The request should include the user's `email` and `password`. If successful, the response will include the authenticated user's information and an authentication token.
 
@@ -69,7 +69,7 @@ This endpoint allows users to login to their WiCare account. The request should 
 
 ### Logout
 
-`POST /wicare/api/auth/logout/`
+`POST /api/auth/logout/`
 
 This endpoint allows users to logout of their WiCare account. The request should include the user's authentication token. 
 

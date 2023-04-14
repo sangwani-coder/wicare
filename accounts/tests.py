@@ -20,25 +20,25 @@ class AuthenticationTest(APITestCase):
         """
         Test that the register reverse URL is correct.
         """
-        self.assertEqual(self.register_url, "/wicare/api/auth/register/")
+        self.assertEqual(self.register_url, "/api/auth/register/")
 
     def test_login(self):
         """
         Test that the login reverse URL is correct.
         """
-        self.assertEqual(self.login_url, "/wicare/api/auth/login/")
+        self.assertEqual(self.login_url, "/api/auth/login/")
 
     def test_logout(self):
         """
         Test that the logout reverse URL is correct.
         """
-        self.assertEqual(self.logout_url, "/wicare/api/auth/logout/")
+        self.assertEqual(self.logout_url, "/api/auth/logout/")
 
     def test_logout_all(self):
         """
         Test that the logoutall reverse URL is correct.
         """
-        self.assertEqual(self.logout_all_url, "/wicare/api/auth/logoutall/")
+        self.assertEqual(self.logout_all_url, "/api/auth/logoutall/")
 
 class RegisterSerializerTestCase(TestCase):
     def setUp(self):

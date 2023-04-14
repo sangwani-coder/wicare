@@ -3,8 +3,8 @@ from .views import LoginAPI, RegisterAPI
 from django.urls import path
 
 urlpatterns = [
-    path('auth/register/', RegisterAPI.as_view(), name='register'),
-    path('auth/login/', LoginAPI.as_view(), name='login'),
-    path('auth/logout/', knox_views.LogoutView.as_view(), name='logout'),
-    path('auth/logoutall/', knox_views.LogoutAllView.as_view(), name='logoutall'),
+    path('register/', RegisterAPI.as_view(), name='register'),
+    path('login/', LoginAPI.as_view(), name='login'),
+    path('logout/', knox_views.LogoutView.as_view(), name='logout'),
+    path('logoutall/', knox_views.LogoutAllView.as_view(), name='logoutall'),
 ]
