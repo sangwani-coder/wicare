@@ -1,7 +1,7 @@
 from django.test import TestCase
 from django.urls import reverse
 from rest_framework import status
-from .models import Donee, Donation
+from .models import Donee, Donation, get_default_donee
 from .serializers import DoneeSerializer
 from rest_framework.test import APITestCase, APIClient
 
@@ -261,3 +261,35 @@ class DonationTestCase(APITestCase):
         }
         response = self.client.put(self.donation_url, donor_data, format='json')
         self.assertEqual(response.status_code, status.HTTP_405_METHOD_NOT_ALLOWED)
+
+    def test_get_default_donee(self):
+        """
+        test that a default donee object is created.
+        """
+        donee = get_default_donee()
+        self.assertEqual(donee.user.username, 'testuser')
+        self.assertEqual(donee.full_name, 'wicare-general')
+        self.assertEqual(donee.need, 'Help the needy in society')
+
+
+    def test_create_default_donation(self):
+        """
+        Test that a default donee is given the donation
+        If not explicitly selected by donor
+        """
+        donor_data = {
+            'donor_full_names':'donor names',
+            'location':'Kitwe',
+            'amount':50,
+            'comment':'Glad to help',
+            'account_number':'0987537829290'
+        }
+        response = self.client.post(self.donation_url, donor_data, format='json')
+        self.assertEqual(response.status_code, status.HTTP_201_CREATED)
+        # verify that a donation was created to the
+        # right donee
+        donation = Donation.objects.first()
+        self.assertEqual(donation.donee.full_name, 'wicare-general')
+        self.assertEqual(donation.comment, 'Glad to help')
+        # verify that the donation was added to the right user
+        self.assertEqual(donation.donee.user.username, 'testuser')

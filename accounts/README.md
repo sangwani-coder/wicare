@@ -81,7 +81,7 @@ This endpoint allows users to logout of their WiCare account. The request should
 
 **Response Codes**
     
-    * 204 No Conent(user has been logged out successfully)
+    * 204 No Content(user has been logged out successfully)
 
 ### Logout All
 

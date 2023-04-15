@@ -9,10 +9,10 @@ WiCare's ultimate goal is to reduce poverty and improve the well-being of commun
 
 ## Technologies
 
-* *Django Rest* Backend(server side)
+* *Django-Rest-Framework* Backend
 * *Vues.js* Frontend
 * *postgres* Database
-* *knox* Authentication
+* *knox* Token based Authentication
 
 
 ## API Endpoints
@@ -40,13 +40,7 @@ It returns links to all the endpoints.
 
 ## WiCare Apps
 
-|Application name | Description |
+|Applications | Description |
 |------------------|------------|
-| [*] [Accounts](./accounts/)| User Authentication|
-| [*] [API](./api/)| Business logic |
-
-## Team
-
-- Peter Zyambo (Founder)
-- Petrocelly Kafula (Co-Founder with experience in project management and fundraising)
-- Sepiso Mukelabai (Co-Founder, Student Nurse, Community worker)
+| [*] [accounts](./accounts/)| Handles User authentication(registration, login and logout)|
+| [*] [api](./api/)| Handles the business logic of the site |

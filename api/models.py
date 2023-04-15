@@ -52,13 +52,25 @@ class Donee(models.Model):
     bio = models.TextField()
     date_created = models.DateTimeField(auto_now_add=True)
 
-
     def __str__(self) -> str:
         return self.full_name + ', ' + self.location[1] + ', ' + self.need
 
+def get_default_donee():
+    """
+    get a default value for Donation Donee, create new status if not available.
+    """
+    user = User.objects.first()
+    return Donee.objects.get_or_create(
+        user = user,
+        full_name="wicare-general",
+        need = "Help the needy in society",
+        bio = "Wicare connects the poor with individuals willing to help"
+        )[0]
 
 class Donation(models.Model):
-    donee = models.ForeignKey(Donee, related_name="donation", on_delete=models.CASCADE)
+    donee = models.ForeignKey(
+        Donee, related_name="donation",
+        default=get_default_donee, on_delete=models.CASCADE)
     donor_full_names = models.CharField(max_length=255)
     location = models.CharField(max_length=255)
     amount = models.FloatField()
