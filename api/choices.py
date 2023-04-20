@@ -33,9 +33,9 @@ CAUSES_CHOICES = (
     ('general', _('general')),
     ('no poverty', _('no poverty')),
     ('zero hunger', _('zero hunger')),
-    ('health and well-being.', _('health and well-being.')),
-    ('quality education for all.', _('quality education for all.')),
-    ('clean water and sanitation.', _('clean water and sanitation.')),
+    ('health and well-being', _('health and well-being')),
+    ('quality education for all', _('quality education for all')),
+    ('clean water and sanitation', _('clean water and sanitation')),
 )
 
 # gender choices

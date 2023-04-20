@@ -5,8 +5,6 @@ from django.utils.translation import gettext_lazy as _
 from phonenumber_field.modelfields import PhoneNumberField
 from . import choices
 
-PROVINCE_UNKNOWN = '....'
-
 def upload_to(instance, filename):
     return 'user_profile_image/{}/{}'.format(instance.user_id, filename)
 
@@ -26,7 +24,7 @@ class UserProfile(models.Model):
     account_number = models.CharField(max_length=20, blank=True)
     location = models.CharField(_('location'),
         max_length=50, choices=choices.ZAMBIAN_PROVINCE_CHOICES,
-        default=PROVINCE_UNKNOWN, blank=True)
+        default='central province', blank=True)
     bio = models.TextField(max_length=150)
     image = models.ImageField(_('image'),
         blank=True, null=True, upload_to=upload_to)
@@ -37,6 +35,7 @@ class Donee(models.Model):
     full_name = models.CharField(max_length=255)
     location = models.CharField(_('location'),
         max_length=50, choices=choices.ZAMBIAN_PROVINCE_CHOICES,
+        default='central province',
         blank=False)
     image = models.ImageField(_('image'), blank=True, null=True, upload_to=upload_to)
     need = models.TextField()
@@ -62,18 +61,15 @@ def get_default_donee():
         )[0]
 
 class Donation(models.Model):
-    
-    # donee = models.ForeignKey(
-    #     Donee, related_name="donation",
-    #     default=get_default_donee, on_delete=models.CASCADE)
     cause = models.CharField(_('cause'),
         max_length=50, choices=choices.CAUSES_CHOICES, default='general', blank=True)
     donor_full_names = models.CharField(max_length=255)
     location = models.CharField(_('location'),
         max_length=50, choices=choices.ZAMBIAN_PROVINCE_CHOICES,
+        default='central province',
         blank=False)
-    amount_donated = models.FloatField()
-    comment = models.TextField()
+    amount_donated = models.IntegerField()
+    comment = models.TextField(blank=True)
     account_number = models.CharField(max_length=15)
     date_created = models.DateTimeField(auto_now_add=True)
 

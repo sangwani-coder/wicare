@@ -9,9 +9,9 @@
   <link rel="stylesheet" href="static/css/style.css">
   <link rel="icon" href="img/logo-color.png" type="image/x-icon" style="border-radius: 50%;">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-  <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-</head> -->
+  <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script> -->
+  <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script> -->
+</head>
 <body onload="updateProgressBars()">
   <nav class="navbar navbar-inverse">
     <div class="container-fluid">
@@ -31,10 +31,18 @@
           <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Gallery</a>
+           <a class="nav-link" href="templates/gallery.html">Gallery</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">About</a>
+           <a class="nav-link" href="templates/donation.html">Donors</a>
+        </li>
+        <li class="nav-item">
+          <li class="nav-item">
+          <a class="nav-link" href="./donees.html">Donees</a>
+       </li>
+       </li>
+        <li class="nav-item">
+           <a class="nav-link" href="templates/about.html">About</a>
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -50,8 +58,8 @@
         </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-        <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+        <li><a href="templates/auth/register.html"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+        <li><a href="templates/auth/login.html"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
       </ul>
     </div>
     </div>
@@ -63,8 +71,12 @@
       <div class="hero-text">
         <h1>Help us make a difference</h1>
         <p>Join WiCare and make a positive impact in your community.</p>
+        <a href="templates/donate.html">
         <button class="btn btn-primary">Donate Now</button><br><br>
-        <button class="btn btn-primary">Register</button>
+        </a>
+        <a href="templates/auth/register.html">
+          <button class="btn btn-primary">Register</button>
+        </a>
       </div>
     </div>
   </section>
@@ -74,7 +86,9 @@
     <div class="container">
       <h4>No Poverty Fundraising Goal</h4>
       <div class="progress">
+      <a href="templates/donate.html">
         <div id="noPovertyProgress" class="progress-bar bg-success" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+      </a>
       </div>
       <p>We are almost halfway there, help us reach our goal by making a donation today.</p>
     </div>
@@ -84,7 +98,9 @@
     <div class="container">
       <h4>Zero Hunger Fundraising Goal</h4>
       <div class="progress">
-        <div id="zeroHungerProgress" class="progress-bar bg-success" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+        <a href="templates/donate.html">
+          <div id="zeroHungerProgress" class="progress-bar bg-success" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+        </a>
       </div>
       <p>We are almost halfway there, help us reach our goal by making a donation today.</p>
     </div>
@@ -95,7 +111,9 @@
     <div class="container">
       <h4>Health and Well-Being Fundraising Goal</h4>
       <div class="progress">
-        <div id="healthProgress" class="progress-bar bg-success" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+        <a href="templates/donate.html">
+          <div id="healthProgress" class="progress-bar bg-success" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+        </a>
       </div>
       <p>We are almost halfway there, help us reach our goal by making a donation today.</p>
     </div>
@@ -105,7 +123,9 @@
     <div class="container">
       <h4>Quality Education Fundraising Goal</h4>
       <div class="progress">
-        <div id="educationProgress" class="progress-bar bg-success" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+        <a href="templates/donate.html">
+          <div id="educationProgress" class="progress-bar bg-success" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+        </a>
       </div>
       <p>We are almost halfway there, help us reach our goal by making a donation today.</p>
     </div>
@@ -115,13 +135,21 @@
     <div class="container">
       <h4>Clean Water and Sanitation Fundraising Goal</h4>
       <div class="progress">
-        <div id="cleanWaterProgress" class="progress-bar bg-success" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+        <a href="templates/donate.html">
+          <div id="cleanWaterProgress" class="progress-bar bg-success" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+        </a>
       </div>
       <p>We are almost halfway there, help us reach our goal by making a donation today.</p>
     </div>
   </section>
   </section>
   </section>
+  <div class="container">
+    <a href="templates/donate.html">
+      <button class="btn btn-primary">Donate Now</button><br><br>
+      </a>
+  </div>
+
 
   <!-- Scripts -->
   <script src="static/js/api.js"></script>

@@ -15,11 +15,6 @@ router.register(r'userprofile',
 # router.register(r'user-profile-multipart',
     # UserProfileMultiPartParserViewSet, basename='profile-multipart')
 
-# print url patterns and names to
-# use in reverse()
-# import pprint
-# pprint.pprint(router.get_urls())
-
 urlpatterns = [
     path('', api_root),
     path('users/', UserList.as_view(), name='user-list'),
