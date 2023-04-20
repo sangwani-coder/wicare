@@ -5,11 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>WiCare</title>
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"> -->
   <link rel="stylesheet" href="static/css/style.css">
-  <link rel="icon" href="img/logo-color.png" type="image/x-icon"/>
-</head>
-<body>
+  <link rel="icon" href="img/logo-color.png" type="image/x-icon" style="border-radius: 50%;">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head> -->
+<body onload="updateProgressBars()">
   <nav class="navbar navbar-inverse">
     <div class="container-fluid">
       <div class="navbar-header">
@@ -19,8 +22,7 @@
         <span class="icon-bar"></span>
       </button>
       <a class="navbar-brand" href="#">
-        <img src="img/logo-color.png" width="30" height="30" class="d-inline-block align-top logo" alt="">
-        WICARE
+        <img src="img/logo-color.png" class="d-inline-block align-top logo" alt="wicare logo">
       </a>
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
@@ -35,16 +37,16 @@
           <a class="nav-link" href="#">About</a>
         </li>
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             Impact Areas
           </a>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-            <a class="dropdown-item" href="#">No Poverty</a>
-            <a class="dropdown-item" href="#">Zero Hunger</a>
-            <a class="dropdown-item" href="#">Good Heath and Well-Being</a>
-            <a class="dropdown-item" href="#">Quality Education</a>
-            <a class="dropdown-item" href="#">Clean Water and Sanitation</a>
-          </div>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <li><a class="dropdown-item" href="#">No Poverty</a></li>
+            <li><a class="dropdown-item" href="#">Zero Hunger</a></li>
+            <li><a class="dropdown-item" href="#">Good Heath and Well-Being</a></li>
+            <li><a class="dropdown-item" href="#">Quality Education</a></li>
+            <li><a class="dropdown-item" href="#">Clean Water and Sanitation</a></li>
+          </ul>
         </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
@@ -72,7 +74,7 @@
     <div class="container">
       <h4>No Poverty Fundraising Goal</h4>
       <div class="progress">
-        <div class="progress-bar bg-success" role="progressbar" style="width: 50%;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">50%</div>
+        <div id="noPovertyProgress" class="progress-bar bg-success" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
       </div>
       <p>We are almost halfway there, help us reach our goal by making a donation today.</p>
     </div>
@@ -82,7 +84,7 @@
     <div class="container">
       <h4>Zero Hunger Fundraising Goal</h4>
       <div class="progress">
-        <div class="progress-bar bg-success" role="progressbar" style="width: 50%;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">50%</div>
+        <div id="zeroHungerProgress" class="progress-bar bg-success" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
       </div>
       <p>We are almost halfway there, help us reach our goal by making a donation today.</p>
     </div>
@@ -93,7 +95,7 @@
     <div class="container">
       <h4>Health and Well-Being Fundraising Goal</h4>
       <div class="progress">
-        <div class="progress-bar bg-success" role="progressbar" style="width: 50%;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">50%</div>
+        <div id="healthProgress" class="progress-bar bg-success" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
       </div>
       <p>We are almost halfway there, help us reach our goal by making a donation today.</p>
     </div>
@@ -103,7 +105,7 @@
     <div class="container">
       <h4>Quality Education Fundraising Goal</h4>
       <div class="progress">
-        <div class="progress-bar bg-success" role="progressbar" style="width: 50%;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">50%</div>
+        <div id="educationProgress" class="progress-bar bg-success" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
       </div>
       <p>We are almost halfway there, help us reach our goal by making a donation today.</p>
     </div>
@@ -113,7 +115,7 @@
     <div class="container">
       <h4>Clean Water and Sanitation Fundraising Goal</h4>
       <div class="progress">
-        <div class="progress-bar bg-success" role="progressbar" style="width: 50%;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">50%</div>
+        <div id="cleanWaterProgress" class="progress-bar bg-success" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
       </div>
       <p>We are almost halfway there, help us reach our goal by making a donation today.</p>
     </div>
@@ -122,6 +124,7 @@
   </section>
 
   <!-- Scripts -->
+  <script src="static/js/api.js"></script>
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>

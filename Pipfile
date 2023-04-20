@@ -17,6 +17,8 @@ psycopg2-binary = "*"
 django-rest-knox = "*"
 django-phonenumber-field = "*"
 django-phonenumbers = "*"
+model-bakery = "*"
+faker = "*"
 
 [dev-packages]
 
