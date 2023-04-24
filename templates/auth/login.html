@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>WiCare Donations</title>
-    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"> -->
     <link rel="stylesheet" href="../../static/css/style.css">
     <link rel="stylesheet" href="../../static/css/form.css">
     <link rel="icon" href="../../img/logo-color.png" type="image/x-icon" style="border-radius: 50%;">
@@ -46,16 +45,16 @@
                         <a class="nav-link" href="../about.html">About</a>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true"
+                       <a class="nav-link dropdown-toggle" href="../impact_areas.html" data-toggle="dropdown" aria-haspopup="true"
                             aria-expanded="false">
                             Impact Areas
                         </a>
-                        <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                            <li><a class="dropdown-item" href="#">No Poverty</a></li>
-                            <li><a class="dropdown-item" href="#">Zero Hunger</a></li>
-                            <li><a class="dropdown-item" href="#">Good Heath and Well-Being</a></li>
-                            <li><a class="dropdown-item" href="#">Quality Education</a></li>
-                            <li><a class="dropdown-item" href="#">Clean Water and Sanitation</a></li>
+                        <ul class="dropdown-content" aria-labelledby="navbarDropdownMenuLink">
+                            <li><a class="dropdown-item" href="../impact_areas.html#no-poverty">No Poverty</a></li>
+                            <li><a class="dropdown-item" href="../impact_areas.html#zero-hunger">Zero Hunger</a></li>
+                            <li><a class="dropdown-item" href="../impact_areas.html#good-health">Good Heath and Well-Being</a></li>
+                            <li><a class="dropdown-item" href="../impact_areas.html#quality-education">Quality Education</a></li>
+                            <li><a class="dropdown-item" href="../impact_areas.html#clean-water">Clean Water and Sanitation</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -67,7 +66,7 @@
     </nav>
 
     <!-- Form section -->
-    <div>
+    <div class="col-md-4 col-md-offset-4">
         <form action="/api/auth/login/" method="POST" enctype="multipart/form-data" class="form-horizontal"
             novalidate="">
             <fieldset>
@@ -90,8 +89,7 @@
                     </div>
                 </div>
                 <div class="form-actions">
-                    <button class="btn btn-primary js-tooltip" title=""
-                        data-original-title="Make a POST request on the Register Api resource">Login</button>
+                    <button class="btn btn-primary">Login</button>
                 </div>
             </fieldset>
         </form>
