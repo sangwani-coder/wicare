@@ -8,11 +8,11 @@
     <title>WiCare Donations</title>
     <link rel="stylesheet" href="../../static/css/style.css">
     <link rel="stylesheet" href="../../static/css/form.css">
-    <link rel="icon" href="../../img/logo-color.png" type="image/x-icon" style="border-radius: 50%;">
+    <link rel="icon" href="../../img/logo-no-background.png" type="image/x-icon" style="border-radius: 50%;">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 </head>
 
-<body>
+<body id="bootstrap-override">
     <!-- Navigation section -->
     <nav class="navbar navbar-inverse">
         <div class="container-fluid">
@@ -23,7 +23,7 @@
                     <span class="icon-bar"></span>
                 </button>
                 <a class="navbar-brand" href="../../index.html">
-                    <img src="../../img/logo-color.png" class="d-inline-block align-top logo" alt="wicare logo">
+                    <img src="../../img/logo-no-background.png" class="d-inline-block align-top logo" alt="wicare logo">
                 </a>
             </div>
             <div class="collapse navbar-collapse" id="myNavbar">
@@ -45,16 +45,19 @@
                         <a class="nav-link" href="../about.html">About</a>
                     </li>
                     <li class="nav-item dropdown">
-                       <a class="nav-link dropdown-toggle" href="../impact_areas.html" data-toggle="dropdown" aria-haspopup="true"
-                            aria-expanded="false">
+                        <a class="nav-link dropdown-toggle" href="../impact_areas.html" data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false">
                             Impact Areas
                         </a>
                         <ul class="dropdown-content" aria-labelledby="navbarDropdownMenuLink">
                             <li><a class="dropdown-item" href="../impact_areas.html#no-poverty">No Poverty</a></li>
                             <li><a class="dropdown-item" href="../impact_areas.html#zero-hunger">Zero Hunger</a></li>
-                            <li><a class="dropdown-item" href="../impact_areas.html#good-health">Good Heath and Well-Being</a></li>
-                            <li><a class="dropdown-item" href="../impact_areas.html#quality-education">Quality Education</a></li>
-                            <li><a class="dropdown-item" href="../impact_areas.html#clean-water">Clean Water and Sanitation</a></li>
+                            <li><a class="dropdown-item" href="../impact_areas.html#good-health">Good Heath and
+                                    Well-Being</a></li>
+                            <li><a class="dropdown-item" href="../impact_areas.html#quality-education">Quality
+                                    Education</a></li>
+                            <li><a class="dropdown-item" href="../impact_areas.html#clean-water">Clean Water and
+                                    Sanitation</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -65,19 +68,19 @@
         </div>
     </nav>
 
+    <div class="page-logo-container">
+        <img src="../../img/logo-no-background.png" class="page-logo">
+    </div>
     <!-- Form section -->
+    <h2>Login</h2>
     <div class="col-md-4 col-md-offset-4">
-        <form action="/api/auth/login/" method="POST" enctype="multipart/form-data" class="form-horizontal"
-            novalidate="">
-            <fieldset>
-                <input type="hidden" name="csrfmiddlewaretoken"
-                    value="qQBDTAX9tE5WEQTliJcDMQpufyevniOVjLGDMkuh8nWwXK3JJl8hwos7LQX4ZSKW">
+        <form action="" id="login-form" class="form-horizontal" method="POST" enctype="multipart/form-data">
                 <div class="form-group ">
                     <label class="col-sm-2 control-label ">
                         Username
                     </label>
                     <div class="col-sm-10">
-                        <input name="username" class="form-control" type="text" value="">
+                        <input id="username" name="username" class="form-control" type="text" value="" required autofocus>
                     </div>
                 </div>
                 <div class="form-group ">
@@ -85,18 +88,22 @@
                         Password
                     </label>
                     <div class="col-sm-10">
-                        <input name="password" class="form-control" type="text" value="">
+                        <input id="password" name="password" class="form-control" type="password" value="" required>
                     </div>
                 </div>
                 <div class="form-actions">
-                    <button class="btn btn-primary">Login</button>
+                    <button type="submit" id="loginBtn"  class="btn btn-primary" onsubmit="">Login</button>
                 </div>
-            </fieldset>
         </form>
     </div>
 
     <!-- Scripts -->
-    <script src="../static/js/api.js"></script>
+    <script type="text/javascript">
+        document.getElementById("loginBtn").onclick = function () {
+            location.href = location.href = "../user/dashboard.html";
+        };
+    </script>
+    <script src="../../static/js/auth.js"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>

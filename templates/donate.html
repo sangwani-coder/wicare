@@ -8,11 +8,11 @@
     <title>Donations | WiCare</title>
     <link rel="stylesheet" href="../static/css/style.css">
     <link rel="stylesheet" href="../static/css/form.css">
-    <link rel="icon" href="../img/logo-color.png" type="image/x-icon" style="border-radius: 50%;">
+    <link rel="icon" href="../img/logo-no-background.png" type="image/x-icon" style="border-radius: 50%;">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 </head>
 
-<body>
+<body id="bootstrap-override">
     <!-- Navigation section -->
     <nav class="navbar navbar-inverse">
         <div class="container-fluid">
@@ -23,7 +23,7 @@
                     <span class="icon-bar"></span>
                 </button>
                 <a class="navbar-brand" href="../index.html">
-                    <img src="../img/logo-color.png" class="d-inline-block align-top logo" alt="wicare logo">
+                    <img src="../img/logo-no-background.png" class="d-inline-block align-top logo" alt="wicare logo">
                 </a>
             </div>
             <div class="collapse navbar-collapse" id="myNavbar">
@@ -44,16 +44,19 @@
                         <a class="nav-link" href="./about.html">About</a>
                     </li>
                     <li class="nav-item dropdown">
-                       <a class="nav-link dropdown-toggle" href="impact_areas.html" data-toggle="dropdown" aria-haspopup="true"
-                            aria-expanded="false">
+                        <a class="nav-link dropdown-toggle" href="impact_areas.html" data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false">
                             Impact Areas
                         </a>
                         <ul class="dropdown-content" aria-labelledby="navbarDropdownMenuLink">
                             <li><a class="dropdown-item" href="impact_areas.html#no-poverty">No Poverty</a></li>
                             <li><a class="dropdown-item" href="impact_areas.html#zero-hunger">Zero Hunger</a></li>
-                            <li><a class="dropdown-item" href="impact_areas.html#good-health">Good Heath and Well-Being</a></li>
-                            <li><a class="dropdown-item" href="impact_areas.html#quality-education">Quality Education</a></li>
-                            <li><a class="dropdown-item" href="impact_areas.html#clean-water">Clean Water and Sanitation</a></li>
+                            <li><a class="dropdown-item" href="impact_areas.html#good-health">Good Heath and
+                                    Well-Being</a></li>
+                            <li><a class="dropdown-item" href="impact_areas.html#quality-education">Quality
+                                    Education</a></li>
+                            <li><a class="dropdown-item" href="impact_areas.html#clean-water">Clean Water and
+                                    Sanitation</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -64,25 +67,26 @@
             </div>
         </div>
     </nav>
-
+    <div class="page-logo-container">
+        <img src="../img/logo-no-background.png" class="page-logo">
+    </div>
     <div class="container">
         <h4>
             Your generosity can change a child's life. By donating today,
-            you can help break the cycle of poverty and give families the resources they need to thrive.<a href="../learn_more.html">Learn More</a>
+            you can help break the cycle of poverty and give families the resources they need to thrive.<a
+                href="./learn_more.html#donor">Learn More</a>
         </h4>
     </div>
 
     <!-- Form section -->
     <div class="col-md-4 col-md-offset-4">
-        <h3>Make a Donation</h3>
-        <form action="http:localhost:8000/api/donations/" method="POST" enctype="multipart/form-data"
-        class="form-horizontal" novalidate="">
-        <fieldset>
+        <h2>Make a Donation</h2>
+        <form action="checkout.html" method="POST" enctype="multipart/form-data" class="form-horizontal">
             <input type="hidden" name="csrfmiddlewaretoken"
                 value="5BBHOwmGCXrvwwg5KG3MsbfGuOcZ2n6QUddopsNnpwLrkyPpYV8KjOmjJr0JpUBi">
             <div class="form-group">
                 <label class="col-sm-2 control-label ">
-                    Cause
+                    Donote to:
                 </label>
                 <div class="col-sm-10">
                     <select class="form-control" name="cause">
@@ -97,12 +101,12 @@
             </div>
 
             <div class="form-group">
-                <label class="col-sm-2 control-label ">Donor full names</label>
+                <label class="col-sm-2 control-label ">Full names</label>
                 <div class="col-sm-10">
-                    <input name="donor_full_names" class="form-control" type="text" value="">
+                    <input name="donor_full_names" class="form-control" type="text" value="" placeholder="Anonymous">
                 </div>
             </div>
-            <div class="form-group">
+            <!-- <div class="form-group">
                 <label class="col-sm-2 control-label ">Location</label>
                 <div class="col-sm-10">
                     <select class="form-control" name="location">
@@ -118,36 +122,39 @@
                         <option value="Western Province">Western Province</option>
                     </select>
                 </div>
-            </div>
+            </div> -->
 
-            <div class="form-group ">
+            <!-- <div class="form-group ">
                 <label class="col-sm-2 control-label ">Amount donated</label>
                 <div class="col-sm-10">
                     <input name="amount_donated" class="form-control" type="number" value="">
                 </div>
-            </div>
+            </div> -->
 
             <div class="form-group ">
-                <label class="col-sm-2 control-label ">Comment</label>
+                <label class="col-sm-2 control-label ">Message</label>
                 <div class="col-sm-10">
-                    <textarea name="comment" class="form-control"></textarea>
+                    <textarea name="comment" class="form-control" placeholder="Optional"></textarea>
                 </div>
             </div>
 
-            <div class="form-group ">
+            <!-- <div class="form-group ">
                 <label class="col-sm-2 control-label ">Payment Method</label>
                 <div class="col-sm-10">
                     <input name="account_number" class="form-control" type="text" value="">
                 </div>
-            </div>
+            </div> -->
             <div class="form-actions">
-                <button class="btn btn-primary js-tooltip" title=""
-                    data-original-title="Make a POST request on the Donation Api resource">Submit</button>
+                <a href="checkout.html"><button class="btn btn-primary js-tooltip" id="donateBtn" type="submit">Make Donation</button></a>
             </div>
-        </fieldset>
         </form>
     </div>
     <!-- Scripts -->
+    <script type="text/javascript">
+        document.getElementById("donateBtn").onclick = function () {
+            location.href = location.href = "./checkout.html";
+        };
+    </script>
     <script src="../static/js/api.js"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>

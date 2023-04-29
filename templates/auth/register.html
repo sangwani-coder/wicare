@@ -8,11 +8,11 @@
     <title>WiCare Donations</title>
     <link rel="stylesheet" href="../../static/css/style.css">
     <link rel="stylesheet" href="../../static/css/form.css">
-    <link rel="icon" href="../../img/logo-color.png" type="image/x-icon" style="border-radius: 50%;">
+    <link rel="icon" href="../../img/logo-no-background.png" type="image/x-icon" style="border-radius: 50%;">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 </head>
 
-<body>
+<body id="bootstrap-override">
     <!-- Navigation section -->
     <nav class="navbar navbar-inverse">
         <div class="container-fluid">
@@ -23,7 +23,7 @@
                     <span class="icon-bar"></span>
                 </button>
                 <a class="navbar-brand" href="../../index.html">
-                    <img src="../../img/logo-color.png" class="d-inline-block align-top logo" alt="wicare logo">
+                    <img src="../../img/logo-no-background.png" class="d-inline-block align-top logo" alt="wicare logo">
                 </a>
             </div>
             <div class="collapse navbar-collapse" id="myNavbar">
@@ -67,18 +67,15 @@
             </div>
         </div>
     </nav>
-    <h4>Welcome to the Wicare community! By subscribing, you'll receive updates on the impact you're making in
-        the lives of underprivileged children and families in Zambia. Your support will help us to provide
-        access to basic needs such as education, healthcare, and nutrition, and contribute to breaking the
-        cycle of poverty. Thank you for being a part of our mission.<a href="../learn_more.html">Learn More</a>
-    </h4>
+    <div class="page-logo-container">
+        <img src="../../img/logo-no-background.png" class="page-logo">
+    </div>
+    <h2>Register</h2>
     <!-- Form section -->
     <div class="col-md-4 col-md-offset-4">
-        <form action="/api/auth/register/" method="POST" enctype="multipart/form-data" class="form-horizontal"
+        <form action="login.html" method="POST" enctype="multipart/form-data" class="form-horizontal"
             novalidate="">
             <fieldset>
-                <input type="hidden" name="csrfmiddlewaretoken"
-                    value="qQBDTAX9tE5WEQTliJcDMQpufyevniOVjLGDMkuh8nWwXK3JJl8hwos7LQX4ZSKW">
                 <div class="form-group ">
                     <label class="col-sm-2 control-label ">
                         Username
@@ -106,15 +103,14 @@
                     </div>
                 </div>
                 <div class="form-actions">
-                    <button class="btn btn-primary js-tooltip" title=""
-                        data-original-title="Make a POST request on the Register Api resource">Signup</button>
+                    <button class="btn btn-primary js-tooltip">Signup</button>
                 </div>
             </fieldset>
         </form>
     </div>
 
     <!-- Scripts -->
-    <script src="../static/js/api.js"></script>
+    <script src="../../static/js/api.js"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>

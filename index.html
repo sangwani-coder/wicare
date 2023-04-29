@@ -5,15 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>WiCare</title>
-  <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"> -->
   <link rel="stylesheet" href="static/css/style.css">
-  <link rel="icon" href="img/logo-color.png" type="image/x-icon" style="border-radius: 50%;">
+  <link rel="icon" href="img/logo-no-background.svg" type="image/x-icon" style="border-radius: 50%;">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-  <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script> -->
-  <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script> -->
 </head>
-<body onload="updateProgressBars()">
-  <nav class="navbar navbar-inverse">
+<body onload="updateProgressBars()" id="bootstrap-override">
+  <nav class="navbar navbar-inverse" id="nav-override">
     <div class="container-fluid">
       <div class="navbar-header">
         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
@@ -22,7 +19,7 @@
         <span class="icon-bar"></span>
       </button>
       <a class="navbar-brand" href="#">
-        <img src="img/logo-color.png" class="d-inline-block align-top logo" alt="wicare logo">
+        <img src="img/logo-no-background.png" class="d-inline-block align-top logo" alt="wicare logo">
       </a>
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
@@ -34,7 +31,7 @@
            <a class="nav-link" href="templates/gallery.html">Gallery</a>
         </li>
         <li class="nav-item">
-           <a class="nav-link" href="templates/donation.html">Donors</a>
+           <a class="nav-link" href="templates/donors.html">Donors</a>
         </li>
         <li class="nav-item">
           <li class="nav-item">
@@ -74,74 +71,77 @@
         <a href="templates/donate.html">
         <button class="btn btn-primary">Donate Now</button><br><br>
         </a>
-        <a href="templates/auth/register.html">
-          <button class="btn btn-primary">Register</button>
+        <a href="templates/learn_more.html">
+          <button class="btn btn-primary">Learn more</button>
         </a>
       </div>
     </div>
   </section>
-
+  <hr>
   <!-- Progress Bar No Poverty Section -->
   <section class="progress-bar-section">
     <div class="container">
-      <h4>No Poverty Fundraising Goal</h4>
+      <a href="templates/impact_areas.html#no-poverty"><h4 class="impact-areas">No Poverty Fundraising Goal</h4></a>
       <div class="progress">
       <a href="templates/donate.html">
         <div id="noPovertyProgress" class="progress-bar bg-success" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
       </a>
       </div>
-      <p>We are almost halfway there, help us reach our goal by making a donation today.</p>
+      <p class="impact-tagline">"Together, let's make poverty a thing of the past."</p>
     </div>
+    <hr>
   </section>
    <!-- Progress Bar Zero Hunger Section -->
    <section class="progress-bar-section">
     <div class="container">
-      <h4>Zero Hunger Fundraising Goal</h4>
+      <a href="templates/impact_areas.html#zero-hunger"><h4 class="impact-areas">Zero Hunger Fundraising Goal</h4></a>
       <div class="progress">
         <a href="templates/donate.html">
           <div id="zeroHungerProgress" class="progress-bar bg-success" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
         </a>
       </div>
-      <p>We are almost halfway there, help us reach our goal by making a donation today.</p>
+      <p class="impact-tagline">"Join the movement for a world with zero hunger."</p>
     </div>
+    <hr>
   </section>
 
    <!-- Progress Bar Health and Well-being Section -->
    <section class="progress-bar-section">
     <div class="container">
-      <h4>Health and Well-Being Fundraising Goal</h4>
+      <a href="templates/impact_areas.html#good-health"><h4 class="impact-areas">Health and Well-Being Fundraising Goal</h4></a>
       <div class="progress">
         <a href="templates/donate.html">
           <div id="healthProgress" class="progress-bar bg-success" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
         </a>
       </div>
-      <p>We are almost halfway there, help us reach our goal by making a donation today.</p>
+      <p class="impact-tagline">"Empowering health and well-being for all."</p>
     </div>
-
+    <hr>
      <!-- Progress Bar Quality education Section -->
   <section class="progress-bar-section">
     <div class="container">
-      <h4>Quality Education Fundraising Goal</h4>
+      <a href="templates/impact_areas.html#quality-education"><h4 class="impact-areas">Quality Education Fundraising Goal</h4></a>
       <div class="progress">
         <a href="templates/donate.html">
           <div id="educationProgress" class="progress-bar bg-success" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
         </a>
       </div>
-      <p>We are almost halfway there, help us reach our goal by making a donation today.</p>
+      <p class="impact-tagline">"Unlocking the potential of quality education for every child."</p>
     </div>
-
+    <hr>
      <!-- Progress Bar Clean water and Sanitation Section -->
   <section class="progress-bar-section">
     <div class="container">
-      <h4>Clean Water and Sanitation Fundraising Goal</h4>
+      <a href="templates/impact_areas.html#clean-water"><h4 class="impact-areas">Clean Water and Sanitation Fundraising Goal</h4></a>
       <div class="progress">
         <a href="templates/donate.html">
           <div id="cleanWaterProgress" class="progress-bar bg-success" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
         </a>
       </div>
-      <p>We are almost halfway there, help us reach our goal by making a donation today.</p>
+      <p class="impact-tagline">"Providing clean water and sanitation, one drop at a time."</p>
     </div>
   </section>
+  <hr>
   </section>
   </section>
   <div class="container">

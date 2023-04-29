@@ -1,9 +1,39 @@
 
+#bootstrap-override {
+  background-color: #1EBBD7;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  font-size: 14px;
+  color: black;
+  line-height: 1.42857143;
+}
+.impact-areas {
+  color: gold;
+  font-weight: bolder;
+}
+
+.impact-tagline {
+  font-style: italic;
+  font-weight: lighter;
+}
+
+hr {
+  margin: auto;
+  width: 40%;
+}
+
 .logo {
   border-radius: 50%;
-  /* width: 100%; */
   height: 100%;
   display: block;
+}
+
+.page-logo {
+  border-radius: 50%;
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+  width: 200px;
 }
 
 .hero-image {

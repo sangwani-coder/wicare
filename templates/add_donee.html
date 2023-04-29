@@ -8,11 +8,11 @@
     <title>WiCare Donations</title>
     <link rel="stylesheet" href="../static/css/style.css">
     <link rel="stylesheet" href="../static/css/form.css">
-    <link rel="icon" href="../img/logo-color.png" type="image/x-icon" style="border-radius: 50%;">
+    <link rel="icon" href="../img/logo-no-background.png" type="image/x-icon" style="border-radius: 50%;">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 </head>
 
-<body>
+<body id="bootstrap-override">
     <!-- Navigation section -->
     <nav class="navbar navbar-inverse">
         <div class="container-fluid">
@@ -23,7 +23,7 @@
                     <span class="icon-bar"></span>
                 </button>
                 <a class="navbar-brand" href="../index.html">
-                    <img src="../img/logo-color.png" class="d-inline-block align-top logo" alt="wicare logo">
+                    <img src="../img/logo-no-background.png" class="d-inline-block align-top logo" alt="wicare logo">
                 </a>
             </div>
             <div class="collapse navbar-collapse" id="myNavbar">
@@ -35,10 +35,10 @@
                         <a class="nav-link" href="./gallery.html">Gallery</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="./donation.html">Donors</a>
+                        <a class="nav-link" href="./donate.html">Donate</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="./donees.html">Donees</a>
+                        <a class="nav-link" href="./add_donee.html">Add Donee</a>
                     </li>
 
                     <li class="nav-item">
@@ -75,7 +75,7 @@
     <!-- Form section -->
     <div class="col-md-4 col-md-offset-4">
 
-        <form action="/api/donees/" method="POST" enctype="multipart/form-data" class="form-horizontal" novalidate="">
+        <form action="donees.html" method="POST" enctype="multipart/form-data" class="form-horizontal" novalidate="">
             <fieldset>
                 <input type="hidden" name="csrfmiddlewaretoken"
                     value="78HAbRYqbg4Hz4S8vEbYEQpbIvJyxDY403MA4BvyQZVhSY2wWg7CoosOeNs79dU5">
