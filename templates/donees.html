@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Donees | WiCare</title>
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../static/css/style.css">
+    <link rel="icon" href="../img/logo-no-background.png" type="image/x-icon" style="border-radius: 50%;">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+</head>
+<body id="bootstrap-override">
+    <!-- Navigation section -->
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="../index.html">
+                    <img src="../img/logo-no-background.png" class="d-inline-block align-top logo" alt="wicare logo">
+                </a>
+            </div>
+            <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="nav navbar-nav">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="../index.html">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./gallery.html">Gallery</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./donors.html">Donors</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./donees.html">Donees</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./about.html">About</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                       <a class="nav-link dropdown-toggle" href="impact_areas.html" data-toggle="dropdown" aria-haspopup="true"
+                            aria-expanded="false">
+                            Impact Areas
+                        </a>
+                        <ul class="dropdown-content" aria-labelledby="navbarDropdownMenuLink">
+                            <li><a class="dropdown-item" href="impact_areas.html#no-poverty">No Poverty</a></li>
+                            <li><a class="dropdown-item" href="impact_areas.html#zero-hunger">Zero Hunger</a></li>
+                            <li><a class="dropdown-item" href="impact_areas.html#good-health">Good Heath and Well-Being</a></li>
+                            <li><a class="dropdown-item" href="impact_areas.html#quality-education">Quality Education</a></li>
+                            <li><a class="dropdown-item" href="impact_areas.html#clean-water">Clean Water and Sanitation</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="./auth/register.html"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+                    <li><a href="./auth/register.html"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+	<div class="donees-container">
+        <div class="donee-card">
+          <img src="donee1.jpg" alt="Donee 1">
+          <h3>John Doe</h3>
+          <p>John is a 10-year-old boy from a poor family who needs help with school fees. He requires $50 to complete his school fees payment for the term.</p>
+          <div class="donate">
+            <p>Amount needed: $50</p>
+            <a href="./donate.html"><button>Donate Now</button></a>
+          </div>
+        </div>
+        
+        <div class="donee-card">
+          <img src="donee2.jpg" alt="Donee 2">
+          <h3>Jane Smith</h3>
+          <p>Jane is a single mother of two who needs help with her children's medical expenses. She requires $150 for the treatment of her children's illnesses.</p>
+          <div class="donate">
+            <p>Amount needed: $150</p>
+            <a href="./donate.html"><button>Donate Now</button></a>
+          </div>
+        </div>
+        
+        <div class="donee-card">
+          <img src="donee3.jpg" alt="Donee 3">
+          <h3>Michael Brown</h3>
+          <p>Michael is a young man who has been struggling to find employment due to lack of proper work attire. He requires $100 to buy interview attire.</p>
+          <div class="donate">
+            <p>Amount needed: $100</p>
+            <a href="./donate.html"><button>Donate Now</button></a>
+          </div>
+        </div>
+      </div>
+      <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+</html>

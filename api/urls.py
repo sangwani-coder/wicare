@@ -12,13 +12,8 @@ from .views import (
 router = routers.DefaultRouter()
 router.register(r'userprofile',
     UserProfileViewSet, basename='profile-list')
-router.register(r'user-profile-multipart',
-    UserProfileMultiPartParserViewSet, basename='profile-multipart')
-
-# print url patterns and names to
-# use in reverse()
-# import pprint
-# pprint.pprint(router.get_urls())
+# router.register(r'user-profile-multipart',
+    # UserProfileMultiPartParserViewSet, basename='profile-multipart')
 
 urlpatterns = [
     path('', api_root),

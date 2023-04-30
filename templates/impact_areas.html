@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>WiCare Impact Areas</title>
+    <link rel="stylesheet" href="../static/css/style.css">
+    <link rel="icon" href="../img/logo-no-background.png" type="image/x-icon" style="border-radius: 50%;">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+</head>
+
+<body id="bootstrap-override">
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="../index.html">
+                    <img src="../img/logo-no-background.png" class="d-inline-block align-top logo" alt="wicare logo">
+                </a>
+            </div>
+            <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="nav navbar-nav">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="../index.html">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./gallery.html">Gallery</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./donation.html">Donors</a>
+                    </li>
+                    <li class="nav-item">
+                    <li class="nav-item">
+                        <a class="nav-link" href="./donees.html">Donees</a>
+                    </li>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./about.html">About</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="impact_areas.html" data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false">
+                            Impact Areas
+                        </a>
+                        <ul class="dropdown-content" aria-labelledby="navbarDropdownMenuLink">
+                            <li><a class="dropdown-item" href="impact_areas.html#no-poverty">No Poverty</a></li>
+                            <li><a class="dropdown-item" href="impact_areas.html#zero-hunger">Zero Hunger</a></li>
+                            <li><a class="dropdown-item" href="impact_areas.html#good-health">Good Heath and
+                                    Well-Being</a></li>
+                            <li><a class="dropdown-item" href="impact_areas.html#quality-education">Quality
+                                    Education</a></li>
+                            <li><a class="dropdown-item" href="impact_areas.html#clean-water">Clean Water and
+                                    Sanitation</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="./auth/register.html"><span class="glyphicon glyphicon-user"></span> Sign
+                            Up</a></li>
+                    <li><a href="./auth/login.html"><span class="glyphicon glyphicon-log-in"></span> Login</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container">
+        <h1>Our Impact Areas</h1>
+        <p>We believe that everyone deserves access to basic needs, such as education, health, and clean water.
+            WiCare is committed to achieving the United Nations' Sustainable Development Goals (SDGs) through our work
+            in
+            the
+            following five impact areas:
+
+    </div>
+
+    <!-- No Poverty section -->
+    <section class="container">
+        <h2 id="no-poverty">No Poverty</h2>
+        <h3>"Together, let's make poverty a thing of the past."</h3>
+        <div class="impact-text">
+            <p>Our aim is to eradicate poverty in poor communities by connecting donors with families in need of
+                financial
+                assistance for
+                basic needs such as food, clothing, and education.<span class="dots">...</span><span class="more">Our
+                    goal
+                    is to reduce poverty in Zambia by
+                    providing families with the necessary resources to support themselves. We work with communities to
+                    provide education,
+                    training, and access to financial resources. Through our platform, donors can support families in
+                    need
+                    and help to
+                    break the cycle of poverty.
+                    <a href="./donate.html"><button>Donate Now</button></a>
+                </span></p>
+            <button onclick="readMoreReadLess('1')" class="myBtn" id="myBtn">Read more</button>
+
+        </div>
+    </section>
+
+    <!-- Zero Hunger section -->
+    <section class="container">
+        <h2 id="zero-hunger">Zero Hunger</h2>
+        <h3>"Join the movement for a world with zero hunger."</h3>
+        <div class="impact-text">
+            <p>We work to provide food security and improve access to nutritious food in poor communities,
+                reducing malnutrition and hunger-related illnesses.<span class="dots">...</span>
+                <span class="more">We believe that everyone should have access to nutritious food. Our platform connects
+                    donors with families in need, allowing them to provide food and other essentials. We also work with
+                    communities to promote sustainable agriculture and provide education on nutrition and healthy
+                    eating.
+                    <a href="./donate.html"><button>Donate Now</button></a>
+                </span>
+            </p>
+            <button onclick="readMoreReadLess('2')" class="myBtn">Read more</button>
+        </div>
+
+    </section>
+
+    <!-- Good Health and Well-being section -->
+    <section class="container">
+        <h2 id="good-health">Good Health and Well-being</h2>
+        <h3>"Empowering health and well-being for all."</h3>
+        <div class="impact-text">
+            <p>We aim to improve the health and well-being of individuals in poor communities by providing
+                access to basic healthcare services, including medical supplies and equipment.<span
+                    class="dots">...</span>
+                <span class="more">We aim to improve the health and well-being of families in Zambia by providing access
+                    to
+                    basic healthcare and hygiene resources. Through our platform, donors can provide families with
+                    access to
+                    clean water, sanitation facilities, and medical supplies. We also work with communities to provide
+                    education on health and hygiene practices.
+                    <a href="./donate.html"><button>Donate Now</button></a>
+
+                </span>
+            </p>
+            <button onclick="readMoreReadLess('3')" class="myBtn">Read more</button>
+        </div>
+    </section>
+
+    <!-- Quality Education section -->
+    <section class="container">
+        <h2 id="quality-education">Quality Education</h2>
+        <h3>"Unlocking the potential of quality education for every child."</h3>
+        <div class="impact-text">
+            <p>We strive to provide access to quality education for children in poor communities, ensuring they receive
+                a well-rounded education that enables them to break the cycle of poverty and improve their future
+                prospects.<span class="dots">...</span>
+                <span class="more">We believe that education is key to breaking the cycle of poverty. Our platform
+                    connects
+                    donors with schools and families in need of education resources. We also work with communities to
+                    promote access to education and provide training and support for teachers.
+                    <a href="./donate.html"><button>Donate Now</button></a>
+
+                </span>
+            </p>
+            <button onclick="readMoreReadLess('4')" class="myBtn">Read more</button>
+        </div>
+    </section>
+
+    <!-- Clean Water and Sanitation section -->
+    <section class="container">
+        <h2 id="clean-water">Clean Water and Sanitation</h2>
+        <h3>"Providing clean water and sanitation, one drop at a time."</h3>
+        <div class="impact-text">
+            <p>We work to improve access to clean water and sanitation facilities in poor communities,
+                reducing the incidence of water-borne diseases and improving overall health and well-being.<span
+                    class="dots">...</span>
+                <span class="more">Access to clean water and sanitation facilities is essential for good health and
+                    well-being. Through our platform, donors can provide families and schools with access to clean water
+                    and
+                    sanitation facilities. We also work with communities to promote sustainable water and sanitation
+                    practices.
+                    <a href="./donate.html"><button>Donate Now</button></a>
+
+                </span>
+            </p>
+            <button onclick="readMoreReadLess('5')" class="myBtn">Read more</button>
+        </div>
+    </section>
+
+    <!-- Scripts -->
+    <script src="../static/js/script.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+</body>
+
+</html>

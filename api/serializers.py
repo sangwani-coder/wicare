@@ -3,7 +3,7 @@ from rest_framework import serializers
 from django.contrib.auth.models import User
 from .models import Donee, Donation, UserProfile
 
-from .choices import ModelChoices
+from . import choices
 
 
 class UserSerializer(serializers.ModelSerializer):
@@ -34,30 +34,41 @@ class ChoiceField(serializers.ChoiceField):
 
 class DoneeSerializer(serializers.ModelSerializer):
     location = ChoiceField(
-        choices=ModelChoices.ZAMBIAN_PROVINCE_CHOICES, allow_blank=True)
+        choices=choices.ZAMBIAN_PROVINCE_CHOICES, allow_blank=True)
+    cause =ChoiceField(choices=choices.CAUSES_CHOICES)
+
 
     class Meta:
         model = Donee
-        fields = ('id', 'full_name', 'location', 'bio', 'need', 'image')
+        fields = (
+            'id', 'full_name', 'location','cause',
+            'bio', 'need', 'image' ,'amount_needed')
 
         read_only_fields = ('image',)
 
 
 class DonationSerializer(serializers.ModelSerializer):
+    location = ChoiceField(
+        choices=choices.ZAMBIAN_PROVINCE_CHOICES, allow_blank=True)
+    cause =ChoiceField(choices=choices.CAUSES_CHOICES)
+
     class Meta:
         model = Donation
-        fields = ('__all__')
+        fields = (
+            'id', 'cause', 'donor_full_names', 'location',
+            'amount_donated', 'comment',  'account_number')
+        
+        read_only_fields = ('location', 'cause')
+
 
 
 class UserProfileSerializer(serializers.ModelSerializer):
-    gender = serializers.ChoiceField(
-        choices=ModelChoices.GENDER_CHOICES, allow_blank=True)
-    location = serializers.ChoiceField(
-        choices=ModelChoices.ZAMBIAN_PROVINCE_CHOICES, allow_blank=True)
+    location = ChoiceField(
+        choices=choices.ZAMBIAN_PROVINCE_CHOICES, allow_blank=True)
+    gender = ChoiceField(choices=choices.GENDER_CHOICES)
     class Meta:
         model = UserProfile
         fields = (
-            'user',
             'gender',
             'user_profile',
             'is_nurse',
@@ -72,4 +83,4 @@ class UserProfileSerializer(serializers.ModelSerializer):
         # Given that it is not possible to
         # handle uploads using the default JSON parser,
         # we marked the image field as read-only.
-        readonly_fields = ('image')
+        read_only_fields = ('image',)

@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>WiCare Donations</title>
+    <link rel="stylesheet" href="../static/css/style.css">
+    <link rel="stylesheet" href="../static/css/form.css">
+    <link rel="icon" href="../img/logo-no-background.png" type="image/x-icon" style="border-radius: 50%;">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+</head>
+
+<body id="bootstrap-override">
+    <!-- Navigation section -->
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="../index.html">
+                    <img src="../img/logo-no-background.png" class="d-inline-block align-top logo" alt="wicare logo">
+                </a>
+            </div>
+            <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="nav navbar-nav">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="../index.html">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./gallery.html">Gallery</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./donate.html">Donate</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./add_donee.html">Add Donee</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="./about.html">About</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="impact_areas.html" data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false">
+                            Impact Areas
+                        </a>
+                        <ul class="dropdown-content" aria-labelledby="navbarDropdownMenuLink">
+                            <li><a class="dropdown-item" href="impact_areas.html#no-poverty">No Poverty</a></li>
+                            <li><a class="dropdown-item" href="impact_areas.html#zero-hunger">Zero Hunger</a></li>
+                            <li><a class="dropdown-item" href="impact_areas.html#good-health">Good Heath and
+                                    Well-Being</a></li>
+                            <li><a class="dropdown-item" href="impact_areas.html#quality-education">Quality
+                                    Education</a></li>
+                            <li><a class="dropdown-item" href="impact_areas.html#clean-water">Clean Water and
+                                    Sanitation</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="./user_profile.html"><span class="glyphicon glyphicon-log-in"></span>Profile</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <h2>Add Donee</h2>
+    <!-- Form section -->
+    <div class="col-md-4 col-md-offset-4">
+
+        <form action="donees.html" method="POST" enctype="multipart/form-data" class="form-horizontal" novalidate="">
+            <fieldset>
+                <input type="hidden" name="csrfmiddlewaretoken"
+                    value="78HAbRYqbg4Hz4S8vEbYEQpbIvJyxDY403MA4BvyQZVhSY2wWg7CoosOeNs79dU5">
+                <div class="form-group ">
+                    <label class="col-sm-2 control-label ">
+                        Full name
+                    </label>
+                    <div class="col-sm-10">
+                        <input name="full_name" class="form-control" type="text" value="">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label ">
+                        Location
+                    </label>
+                    <div class="col-sm-10">
+                        <select class="form-control" name="location">
+                            <option value="Central Province">Central Province</option>
+                            <option value="Copperbelt Province">Copperbelt Province</option>
+                            <option value="Eastern Province">Eastern Province</option>
+                            <option value="Luapula Province">Luapula Province</option>
+                            <option value="Lusaka Province">Lusaka Province</option>
+                            <option value="Muchinga Province">Muchinga Province</option>
+                            <option value="Northern Province">Northern Province</option>
+                            <option value="North-Western Province">North-Western Province</option>
+                            <option value="Southern Province">Southern Province</option>
+                            <option value="Western Province">Western Province</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label ">
+                        Cause
+                    </label>
+                    <div class="col-sm-10">
+                        <select class="form-control" name="cause">
+                            <option value="general">general</option>
+                            <option value="no poverty">no poverty</option>
+                            <option value="zero hunger">zero hunger</option>
+                            <option value="health and well-being">health and well-being</option>
+                            <option value="quality education for all">quality education for all</option>
+                            <option value="clean water and sanitation">clean water and sanitation</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group ">
+                    <label class="col-sm-2 control-label ">
+                        Bio
+                    </label>
+                    <div class="col-sm-10">
+                        <textarea name="bio" class="form-control"></textarea>
+                    </div>
+                </div>
+                <div class="form-group ">
+                    <label class="col-sm-2 control-label ">
+                        Need
+                    </label>
+                    <div class="col-sm-10">
+                        <textarea name="need" class="form-control"></textarea>
+                    </div>
+                </div>
+                <div class="form-group ">
+                    <label class="col-sm-2 control-label ">
+                        Amount needed
+                    </label>
+                    <div class="col-sm-10">
+                        <input name="amount_needed" class="form-control" type="number" value="">
+                    </div>
+                </div>
+                <div class="form-actions">
+                    <button class="btn btn-primary js-tooltip" title=""
+                        data-original-title="Make a POST request on the Donee List Create resource">Submit</button>
+                </div>
+            </fieldset>
+        </form>
+    </div>
+    <!-- Scripts -->
+    <script src="../static/js/api.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+
+</html>

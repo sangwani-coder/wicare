@@ -1,6 +1,6 @@
 # views.py
 from django.contrib.auth.models import User
-from rest_framework import generics, permissions
+from rest_framework import generics
 from .models import Donee, Donation, UserProfile
 from .serializers import (
     DoneeSerializer, DonationSerializer,

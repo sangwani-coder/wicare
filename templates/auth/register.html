@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>WiCare Donations</title>
+    <link rel="stylesheet" href="../../static/css/style.css">
+    <link rel="stylesheet" href="../../static/css/form.css">
+    <link rel="icon" href="../../img/logo-no-background.png" type="image/x-icon" style="border-radius: 50%;">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+</head>
+
+<body id="bootstrap-override">
+    <!-- Navigation section -->
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="../../index.html">
+                    <img src="../../img/logo-no-background.png" class="d-inline-block align-top logo" alt="wicare logo">
+                </a>
+            </div>
+            <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="nav navbar-nav">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="../../index.html">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../gallery.html">Gallery</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../donation.html">Donors</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../donees.html">Donees</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="../about.html">About</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="../impact_areas.html" data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false">
+                            Impact Areas
+                        </a>
+                        <ul class="dropdown-content" aria-labelledby="navbarDropdownMenuLink">
+                            <li><a class="dropdown-item" href="../impact_areas.html#no-poverty">No Poverty</a></li>
+                            <li><a class="dropdown-item" href="../impact_areas.html#zero-hunger">Zero Hunger</a></li>
+                            <li><a class="dropdown-item" href="../impact_areas.html#good-health">Good Heath and
+                                    Well-Being</a></li>
+                            <li><a class="dropdown-item" href="../impact_areas.html#quality-education">Quality
+                                    Education</a></li>
+                            <li><a class="dropdown-item" href="../impact_areas.html#clean-water">Clean Water and
+                                    Sanitation</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="./login.html"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="page-logo-container">
+        <img src="../../img/logo-no-background.png" class="page-logo">
+    </div>
+    <h2>Register</h2>
+    <!-- Form section -->
+    <div class="col-md-4 col-md-offset-4">
+        <form action="login.html" method="POST" enctype="multipart/form-data" class="form-horizontal"
+            novalidate="">
+            <fieldset>
+                <div class="form-group ">
+                    <label class="col-sm-2 control-label ">
+                        Username
+                    </label>
+                    <div class="col-sm-10">
+                        <input name="username" class="form-control" type="text" value="">
+                        <span class="help-block">Required. 150 characters or fewer. Letters, digits and @/./+/-/_
+                            only.</span>
+                    </div>
+                </div>
+                <div class="form-group ">
+                    <label class="col-sm-2 control-label ">
+                        Email address
+                    </label>
+                    <div class="col-sm-10">
+                        <input name="email" class="form-control" type="email" value="">
+                    </div>
+                </div>
+                <div class="form-group ">
+                    <label class="col-sm-2 control-label ">
+                        Password
+                    </label>
+                    <div class="col-sm-10">
+                        <input name="password" class="form-control" type="text" value="">
+                    </div>
+                </div>
+                <div class="form-actions">
+                    <button class="btn btn-primary js-tooltip">Signup</button>
+                </div>
+            </fieldset>
+        </form>
+    </div>
+
+    <!-- Scripts -->
+    <script src="../../static/js/api.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+
+</html>

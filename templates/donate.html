@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Donations | WiCare</title>
+    <link rel="stylesheet" href="../static/css/style.css">
+    <link rel="stylesheet" href="../static/css/form.css">
+    <link rel="icon" href="../img/logo-no-background.png" type="image/x-icon" style="border-radius: 50%;">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+</head>
+
+<body id="bootstrap-override">
+    <!-- Navigation section -->
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="../index.html">
+                    <img src="../img/logo-no-background.png" class="d-inline-block align-top logo" alt="wicare logo">
+                </a>
+            </div>
+            <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="nav navbar-nav">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="../index.html">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./gallery.html">Gallery</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./donors.html">Donors</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./donees.html">Donees</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./about.html">About</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="impact_areas.html" data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false">
+                            Impact Areas
+                        </a>
+                        <ul class="dropdown-content" aria-labelledby="navbarDropdownMenuLink">
+                            <li><a class="dropdown-item" href="impact_areas.html#no-poverty">No Poverty</a></li>
+                            <li><a class="dropdown-item" href="impact_areas.html#zero-hunger">Zero Hunger</a></li>
+                            <li><a class="dropdown-item" href="impact_areas.html#good-health">Good Heath and
+                                    Well-Being</a></li>
+                            <li><a class="dropdown-item" href="impact_areas.html#quality-education">Quality
+                                    Education</a></li>
+                            <li><a class="dropdown-item" href="impact_areas.html#clean-water">Clean Water and
+                                    Sanitation</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="./auth/register.html"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+                    <li><a href="./auth/register.html"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="page-logo-container">
+        <img src="../img/logo-no-background.png" class="page-logo">
+    </div>
+    <div class="container">
+        <h4>
+            Your generosity can change a child's life. By donating today,
+            you can help break the cycle of poverty and give families the resources they need to thrive.<a
+                href="./learn_more.html#donor">Learn More</a>
+        </h4>
+    </div>
+
+    <!-- Form section -->
+    <div class="col-md-4 col-md-offset-4">
+        <h2>Make a Donation</h2>
+        <form action="checkout.html" class="form-horizontal">
+            <input type="hidden" name="csrfmiddlewaretoken"
+                value="5BBHOwmGCXrvwwg5KG3MsbfGuOcZ2n6QUddopsNnpwLrkyPpYV8KjOmjJr0JpUBi">
+            <div class="form-group">
+                <label class="col-sm-2 control-label ">
+                    Donote to:
+                </label>
+                <div class="col-sm-10">
+                    <select class="form-control" name="cause">
+                        <option value="general">general</option>
+                        <option value="no poverty">no poverty</option>
+                        <option value="zero hunger">zero hunger</option>
+                        <option value="health and well-being">health and well-being</option>
+                        <option value="quality education for all">quality education for all</option>
+                        <option value="clean water and sanitation">clean water and sanitation</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="col-sm-2 control-label ">Full names</label>
+                <div class="col-sm-10">
+                    <input name="donor_full_names" class="form-control" type="text" value="" placeholder="Anonymous">
+                </div>
+            </div>
+        
+            <div class="form-group ">
+                <label class="col-sm-2 control-label ">Message</label>
+                <div class="col-sm-10">
+                    <textarea name="comment" class="form-control" placeholder="Optional"></textarea>
+                </div>
+            </div>
+
+            <div class="form-actions">
+                <button class="btn btn-primary js-tooltip" id="donateBtn" type="submit">Make Donation</button>
+            </div>
+        </form>
+    </div>
+    <!-- Scripts -->
+    <script src="../static/js/api.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+
+</html>
