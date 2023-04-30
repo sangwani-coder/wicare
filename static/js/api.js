@@ -5,13 +5,13 @@ function calculateDonationProgress(donation, donee) {
 
 
 async function getDonee() {
-  const response = await fetch('http://localhost:8000/api/donees/');
+  const response = await fetch('https://wicare.sangwani-coder.repl.co/api/donees/');
   const data = await response.json();
   return data;
 }
 
 async function getDonation() {
-  const response = await fetch('http://localhost:8000/api/donations/');
+  const response = await fetch('https://wicare.sangwani-coder.repl.co/api/donations/');
   const data = await response.json();
   return data;
 }
