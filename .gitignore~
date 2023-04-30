@@ -5,8 +5,6 @@ venv/
 .venv/
 *.sqlite3
 migrations/
-.replit*
-*.tom
 
 # node
 .DS_Store
