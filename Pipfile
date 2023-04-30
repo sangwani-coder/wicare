@@ -12,6 +12,18 @@ psycopg2 = "==2.9.5"
 pygments = "==2.14.0"
 pytz = "==2022.7.1"
 sqlparse = "==0.4.3"
+<<<<<<< HEAD
+django-cors-headers = "==3.14.0"
+psycopg2-binary = "==2.9.6"
+django-rest-knox = "==4.2.0"
+django-phonenumber-field = "==7.0.2"
+django-phonenumbers = "==1.0.1"
+cffi = "==1.15.1"
+cryptography = "==40.0.1"
+phonenumbers = "==8.13.9"
+pycparser = "==2.21"
+tzdata = "==2023.3"
+=======
 django-cors-headers = "*"
 psycopg2-binary = "*"
 django-rest-knox = "*"
@@ -19,6 +31,7 @@ django-phonenumber-field = "*"
 django-phonenumbers = "*"
 model-bakery = "*"
 faker = "*"
+>>>>>>> dbd7115d1a7ef84511bf0458a6d18b5447f79bb3
 
 [dev-packages]
 
