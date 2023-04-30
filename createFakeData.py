@@ -35,7 +35,7 @@ def create_fake_data():
     locations = [choice[0] for choice in choices.ZAMBIAN_PROVINCE_CHOICES]
 
     # Create some fake Donee objects
-    for i in range(50):
+    for i in range(25):
         # Choose a random User as the foreign key
         user = random.choice(users)
 
@@ -71,7 +71,7 @@ def create_fake_data():
     for i in range(10):
         donor_full_names = fake.name()
         location = random.choice(choices.ZAMBIAN_PROVINCE_CHOICES)[0]
-        amount_donated = random.uniform(10, 1000)
+        amount_donated = random.uniform(10, 100)
         comment = fake.text()
         account_number = fake.random_int(100000000, 999999999)
         cause = random.choice(choices.CAUSES_CHOICES)[0]
