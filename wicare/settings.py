@@ -141,7 +141,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 ALLOWED_HOSTS = [
   'cf97bd0c-3522-45b6-92d0-db6a7bfbc159.id.repl.co', '10.10.4.146',
   '127.0.0.1', '10.20.1.6', 'https://wicare.sangwani-coder.repl.co',
-  'wicare.sangwani-coder.repl.co'
+  'wicare.sangwani-coder.repl.co', 'localhost'
 ]
 
 REST_FRAMEWORK = {
